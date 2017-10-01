@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: zeppelin
+  namespace: spark-cluster
+spec:
+  type: ClusterIP
+  clusterIP: 10.91.250.20
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    component: zeppelin
