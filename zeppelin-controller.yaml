@@ -20,3 +20,10 @@ spec:
           resources:
             requests:
               cpu: 100m
+          env:
+            - name: SPARK_MASTER
+              value: "spark://spark-master:7077"
+            - name: ZEPPELIN_LOG_DIR
+              value: "/logs"
+            - name: ZEPPELIN_NOTEBOOK_DIR
+              value: "/notebook"
