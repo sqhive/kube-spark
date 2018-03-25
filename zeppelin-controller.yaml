@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: zeppelin
-          image: apache/zeppelin:latest
+          image: apache/zeppelin:0.7.3
           ports:
             - containerPort: 8080
           resources:
