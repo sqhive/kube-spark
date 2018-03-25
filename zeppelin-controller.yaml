@@ -24,7 +24,7 @@ spec:
             - name: SPARK_MASTER
               value: "spark://spark-master:7077"
             - name: ZEPPELIN_PORT
-              value: 8080
+              value: "8080"
             - name: ZEPPELIN_LOG_DIR
               value: "/logs"
             - name: ZEPPELIN_NOTEBOOK_DIR
