@@ -34,6 +34,8 @@ spec:
               name: zeppelin-logs
             - mountPath: /notebook
               name: zeppelin-notebook
+            - mountPath: /data
+              name: zeppelin-data
       volumes:
         - name: zeppelin-logs
           persistentVolumeClaim:
@@ -41,3 +43,6 @@ spec:
         - name: zeppelin-notebook
           persistentVolumeClaim:
             claimName: nfs-zeppelin-notebook
+        - name: zeppelin-data
+          persistentVolumeClaim:
+            claimName: nfs-zeppelin-data
