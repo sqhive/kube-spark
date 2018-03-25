@@ -29,3 +29,15 @@ spec:
               value: "/logs"
             - name: ZEPPELIN_NOTEBOOK_DIR
               value: "/notebook"
+          volumeMounts:
+            - mountPath: /logs
+              name: zeppelin-logs
+            - mountPath: /notebook
+              name: zeppelin-notebook
+      volumes:
+        - name: zeppelin-logs
+          persistentVolumeClaim:
+            claimName: nfs-zeppelin-logs
+        - name: zeppelin-notebook
+          persistentVolumeClaim:
+            claimName: nfs-zeppelin-notebook
