@@ -4,7 +4,7 @@ metadata:
   name: spark-worker
   namespace: spark-cluster
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     component: spark-worker
   template:
@@ -12,6 +12,8 @@ spec:
       labels:
         component: spark-worker
     spec:
+      nodeSelector:
+        cloud.google.com/gke-nodepool: preemptible-pool
       containers:
         - name: spark-worker
           image: gcr.io/sqhive-backend/spark-worker
@@ -20,3 +22,4 @@ spec:
           resources:
             requests:
               cpu: 100m
+              memory: 1Gi

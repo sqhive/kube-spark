@@ -12,6 +12,8 @@ spec:
       labels:
         component: zeppelin
     spec:
+      nodeSelector:
+        cloud.google.com/gke-nodepool: preemptible-pool
       containers:
         - name: zeppelin
           image: apache/zeppelin:0.7.3

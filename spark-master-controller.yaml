@@ -12,6 +12,8 @@ spec:
       labels:
         component: spark-master
     spec:
+      nodeSelector:
+        cloud.google.com/gke-nodepool: preemptible-pool
       containers:
         - name: spark-master
           image: gcr.io/sqhive-backend/spark-master
